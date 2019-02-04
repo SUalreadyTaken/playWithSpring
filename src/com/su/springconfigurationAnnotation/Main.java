@@ -1,13 +1,14 @@
 package com.su.springconfigurationAnnotation;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
 
     public static  void main(String[] args) {
 
-        ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationContextAnnotation.xml");
+        AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext(MyLoggerConfig.class, SportConfig.class);
 
         // component with specific name
         Coach baseballCoach = context.getBean("myBaseballCoach", Coach.class);
@@ -37,7 +38,13 @@ public class Main {
 
         System.out.println("<< footballCoach == footballCoach2 >> " + (footballCoach == footballCoach2));
 
-        System.out.println("\n!!! \n !!@PreDestroy wont be called in prototype!! \n!!!");
+        System.out.println("\n!!! \n !!@PreDestroy wont be called in prototype!! \n!!!\n");
+
+        Coach swimCoach = context.getBean("swimCoach", Coach.class);
+
+        System.out.println("<<Bean from SportConfig.class ... swim daily workout >> " + swimCoach.getDailyWorkout());
+
+        System.out.println("<<Dependency injection in SportConfig.class ... fortune >> " + swimCoach.getDailyFortune());
 
         context.close();
 

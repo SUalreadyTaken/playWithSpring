@@ -1,16 +1,24 @@
 package com.su.springconfigurationAnnotation;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
+import javax.annotation.PostConstruct;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+@Configuration
+@PropertySource("classpath:mylogger.properties")
 public class MyLoggerConfig {
 
-    private String rootLoggerLevel;
+    @Value("${root.logger.level}")
     private String printedLoggerLevel;
+    @Value("${printed.logger.level}")
+    private String rootLoggerLevel;
 
     public void setRootLoggerLevel(String rootLoggerLevel) {
         this.rootLoggerLevel = rootLoggerLevel;
@@ -20,6 +28,7 @@ public class MyLoggerConfig {
         this.printedLoggerLevel = printedLoggerLevel;
     }
 
+    @PostConstruct
     public void initLogger() {
 
         // parse levels

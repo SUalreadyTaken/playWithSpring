@@ -23,15 +23,14 @@ public class BaseballCoach implements Coach {
         this.fortuneService = fortuneService;
     }
 
-
     @PostConstruct
     public void myInitMethod() {
-        System.out.println("Init method with annotation '@PostConstruct'");
+        System.out.println("BaseballCoach.java Init method with annotation '@PostConstruct'");
     }
 
     @PreDestroy
     public void myDestroyMethod() {
-        System.out.println("Destroy method with annotation '@PreDestroy'");
+        System.out.println("BaseballCoach.java Destroy method with annotation '@PreDestroy'");
     }
 
     @Override
