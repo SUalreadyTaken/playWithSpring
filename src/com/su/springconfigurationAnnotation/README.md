@@ -1,1 +1,4 @@
-test branch
+@Component 
+@Autowired
+@Qualifier
+@Value

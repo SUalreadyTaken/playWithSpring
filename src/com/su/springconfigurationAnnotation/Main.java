@@ -27,6 +27,8 @@ public class Main {
 
         System.out.println("<< baseballCoach == baseballCoach2 >> " + (baseballCoach == baseballCoach2));
 
+        System.out.println("<< properties using annotation @Value('${}') >> " + baseballCoach.getName());
+
         System.out.println(footballCoach.getDailyWorkout());
 
         System.out.println("<< autowired qualified setter method for fortune ... can be whatever method not *set* >> " + footballCoach.getDailyFortune());

@@ -2,6 +2,7 @@ package com.su.springconfigurationAnnotation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,7 @@ import javax.annotation.PreDestroy;
 public class BaseballCoach implements Coach {
 
     private FortuneService fortuneService;
+    @Value("${foo.name}")
     private String name;
 
     @Autowired
