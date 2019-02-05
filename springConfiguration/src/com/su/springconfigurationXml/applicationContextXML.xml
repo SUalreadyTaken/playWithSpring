@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- logger -->
+	<bean id="myLoggerConfig" class="com.su.springconfigurationXml.MyLoggerConfig" init-method="initLogger">
+		<property name="rootLoggerLevel" value="FINE" />
+		<property name="printedLoggerLevel" value="FINE"/>
+	</bean>
+
+	<!-- load properties -->
+	<context:property-placeholder location="myproperties.properties" />
+
+
+	<!-- Define your beans here -->
+
+	<!-- define the dependency -->
+
+	<bean id="myFortune"
+		  class="com.su.springconfigurationXml.HappyFortune">
+
+	</bean>
+
+	<bean id="myBaseballCoach"
+		  class="com.su.springconfigurationXml.BaseballCoach"
+		  init-method="myInitMethod"
+		  destroy-method="myDestroyMethod">
+
+		<!-- set up contruction injection-->
+		<constructor-arg ref="myFortune" />
+		<!-- inject literal value from property file -->
+		<property name="name" value="${foo.name}" />
+
+	</bean>
+
+	<bean id="myFootballCoach"
+		  class="com.su.springconfigurationXml.FootballCoach"
+		scope="prototype">
+
+		<!-- set up setter injection-->
+		<property name="fortuneService" ref="myFortune" />
+		<!-- inject literval value-->
+		<property name="name" value="Coach orbit" />
+	</bean>
+
+</beans>
+
+
+
+
+
