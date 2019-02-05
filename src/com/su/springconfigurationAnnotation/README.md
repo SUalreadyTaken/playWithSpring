@@ -1,4 +1,0 @@
-@Component 
-@Autowired
-@Qualifier
-@Value
