@@ -1,5 +1,6 @@
 package com.su.springconfigurationXml;
 
+import com.su.springconfigurationXml.model.Coach;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {

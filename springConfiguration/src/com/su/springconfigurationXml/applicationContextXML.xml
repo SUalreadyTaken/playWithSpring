@@ -8,7 +8,7 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- logger -->
-	<bean id="myLoggerConfig" class="com.su.springconfigurationXml.MyLoggerConfig" init-method="initLogger">
+	<bean id="myLoggerConfig" class="com.su.springconfigurationXml.config.MyLoggerConfig" init-method="initLogger">
 		<property name="rootLoggerLevel" value="FINE" />
 		<property name="printedLoggerLevel" value="FINE"/>
 	</bean>
@@ -22,12 +22,12 @@
 	<!-- define the dependency -->
 
 	<bean id="myFortune"
-		  class="com.su.springconfigurationXml.HappyFortune">
+		  class="com.su.springconfigurationXml.model.HappyFortune">
 
 	</bean>
 
 	<bean id="myBaseballCoach"
-		  class="com.su.springconfigurationXml.BaseballCoach"
+		  class="com.su.springconfigurationXml.model.BaseballCoach"
 		  init-method="myInitMethod"
 		  destroy-method="myDestroyMethod">
 
@@ -39,7 +39,7 @@
 	</bean>
 
 	<bean id="myFootballCoach"
-		  class="com.su.springconfigurationXml.FootballCoach"
+		  class="com.su.springconfigurationXml.model.FootballCoach"
 		scope="prototype">
 
 		<!-- set up setter injection-->

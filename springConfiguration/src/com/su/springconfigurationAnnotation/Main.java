@@ -1,7 +1,9 @@
 package com.su.springconfigurationAnnotation;
 
+import com.su.springconfigurationAnnotation.config.MyLoggerConfig;
+import com.su.springconfigurationAnnotation.config.SportConfig;
+import com.su.springconfigurationAnnotation.model.Coach;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
 
