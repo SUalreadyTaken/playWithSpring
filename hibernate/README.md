@@ -9,5 +9,5 @@ for bi-directional @OneToOne(mappedBy=""child_variable_name_in_parent_class") hi
 in lazy_fetch if u use courses(child) in teacher(parent) toString it will act as ?? EAGER fetch even if u give it a LAZY fetch type why not just display null ??  
 
 
-![oneToOne](https://imgur.com/K30rFwN)
+![oneToOne](https://i.imgur.com/K30rFwN.png)
 
