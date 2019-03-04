@@ -18,4 +18,18 @@
     * One to one
     * One to many
     * Many to many
-    * Lazy and eager fetch
+    * Lazy and eager fetch   
+4. AOP
+    * Pointcut Expressions
+    * Pointcut Declarations
+    * Ordering Aspects
+    * Join points
+    * @Before  
+    * @After
+    * @AfterReturning
+    * @AfterThrowing
+    * @Around  
+5. spring MVC and hibernate demo
+
+##Todo  
+Convert projects to maven standard directory layout
