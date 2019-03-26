@@ -29,7 +29,25 @@
     * @AfterReturning
     * @AfterThrowing
     * @Around  
-5. spring MVC and hibernate demo
+5. Spring MVC and hibernate demo
+6. Spring security
+    * Adding custom login form
+    * Bootstrap CSS login form
+    * Cross site request forgery CSRF
+    * User Roles
+    * Restrict access based on role
+    * Add JDBC database authentication
+7. Spring REST
+    * CRUD
+    * Exception Handling
+    * CRM REST
+8. Spring Boot
+    * CRUD
+    * DAO techniques
+        * Use EntityManager but leverage native Hibernate API  
+        * Use EntityManager and standard JPA API  
+        * Spring Data JPA
+    * Spring Data REST
 
 ##Todo  
-Convert projects to maven standard directory layout
+Convert projects 1-5 to maven standard directory layout
